@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hellopai.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-11-10T14:00:55.645Z</updated>
+    <updated>2019-11-11T14:06:03.066Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hellopai.github.io/"/>
     <link rel="self" href="https://hellopai.github.io//atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://hellopai.github.io//images/avatar.png</logo>
     <icon>https://hellopai.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[秒速五厘米]]></title>
+        <id>https://hellopai.github.io//post/miao-su-wu-li-mi</id>
+        <link href="https://hellopai.github.io//post/miao-su-wu-li-mi">
+        </link>
+        <updated>2019-11-11T14:03:43.000Z</updated>
+        <content type="html"><![CDATA[<p>他想<br>
+电车通过之后，她还会在那里吗<br>
+在或不在都已无所谓了<br>
+如果她就是那个人的话<br>
+能和她这样相遇已经是很大的奇迹了<br>
+等这列电车开过之后就继续向前走吧<br>
+-秒速五厘米<br>
+<img src="https://hellopai.github.io//post-images/1573481154723.jpg" alt=""></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[one more time,one more chance]]></title>
         <id>https://hellopai.github.io//post/one-more-timeone-more-chance</id>

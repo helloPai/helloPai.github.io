@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gridea</title>
+<title>秒速五厘米 | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://hellopai.github.io//favicon.ico?v=1573481157589">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,50 +70,79 @@
   </div>
 </div>
 
-    
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              秒速五厘米
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-11
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>他想<br>
+电车通过之后，她还会在那里吗<br>
+在或不在都已无所谓了<br>
+如果她就是那个人的话<br>
+能和她这样相遇已经是很大的奇迹了<br>
+等这列电车开过之后就继续向前走吧<br>
+-秒速五厘米<br>
+<img src="https://hellopai.github.io//post-images/1573481154723.jpg" alt=""></p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hellopai.github.io//post/one-more-timeone-more-chance">
+              <h3 class="post-title">
+                one more time,one more chance
+              </h3>
+            </a>
+          </div>
         
 
-<div class="archives-container">
-  
-    <h2 class="year">2019</h2>
-    
-      
-        <a href="https://hellopai.github.io//post/miao-su-wu-li-mi" class="post">
-          <h2 class="post-title">
-            秒速五厘米
-          </h2>
-          <div class="time">2019-11-11</div>
-        </a>
-      
-    
-      
-        <a href="https://hellopai.github.io//post/one-more-timeone-more-chance" class="post">
-          <h2 class="post-title">
-            one more time,one more chance
-          </h2>
-          <div class="time">2019-11-10</div>
-        </a>
-      
-    
-      
-        <a href="https://hellopai.github.io//post/wo-de-di-yi-tiao-bo-ke-1" class="post">
-          <h2 class="post-title">
-            我的第一条博客
-          </h2>
-          <div class="time">2019-11-10</div>
-        </a>
-      
-    
-  
-</div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
+<div id="gitalk-container"></div>
 
-    
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
   <a class="rss" href="https://hellopai.github.io//atom.xml" target="_blank">RSS</a>
