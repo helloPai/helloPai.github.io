@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的第一条博客 | Gridea</title>
+<title>SAXReader将xml形式的文件转换为map形式 | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://hellopai.github.io//favicon.ico?v=1574501785888">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,21 +73,51 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              我的第一条博客
+              SAXReader将xml形式的文件转换为map形式
             </h2>
             <div class="post-info">
               <span>
-                2019-11-10
+                2019-11-23
               </span>
               <span>
                 1 min read
               </span>
               
+                <a href="https://hellopai.github.io//tag/X4ch_9GxL" class="post-tag">
+                  # 微信公众号开发
+                </a>
+              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>你好呀这是我的第一条博客</p>
+                <p>//实现将用户发送的xml文件转换成map文件<br>
+public static HashMap&lt;String, String&gt; XmlToMap(ServletInputStream inputStream) {<br>
+//导入dom4j.jar包,获取SAXReader对象<br>
+SAXReader reader = new SAXReader();<br>
+//定义一个haspMap，用来作为返回值<br>
+HashMap&lt;String, String&gt; map=new HashMap&lt;&gt;();<br>
+try {<br>
+//读取输入流，转换成为document形式的文件<br>
+Document doc = reader.read(inputStream);<br>
+///获取文件的根目录，比如 <emp> <name></name></emp>中的emp是根目录，name是子节点<br>
+Element rootElement = doc.getRootElement();<br>
+//这里是因为得到的xml文件中所有根目录都是不一样的故不需要添加参数<br>
+List<Element> elements = rootElement.elements();<br>
+//遍历取出里面所有的子节点<br>
+for(Element e:elements) {<br>
+//name为子元素名字，text为子元素值<br>
+map.put(e.getName(), e.getText());<br>
+}<br>
+} catch (DocumentException e) {<br>
+// TODO Auto-generated catch block<br>
+e.printStackTrace();<br>
+}<br>
+return map;<br>
+}<br>
+这里注意区别根目录和子元素，个人理解是直到只剩下最后一级那就是子元素，上一级为他的根元素：（根目录有多个的可以通过几个for循环取出参考博客：https://blog.csdn.net/qq_36501591/article/details/80522531）<br>
+<img src="https://hellopai.github.io//post-images/1574501694744.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1574501704077.png" alt=""></p>
 
               </div>
               <div class="toc-container">
@@ -97,6 +127,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hellopai.github.io//post/du-qu-request-shu-ru-liu-zhuan-hua-wei-kong-zhi-tai-shu-chu-dai-ma-1">
+              <h3 class="post-title">
+                读取request输入流，转化为控制台输出代码
+              </h3>
+            </a>
+          </div>
         
 
         

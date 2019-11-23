@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hellopai.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-11-20T07:37:11.080Z</updated>
+    <updated>2019-11-23T09:36:35.241Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hellopai.github.io/"/>
     <link rel="self" href="https://hellopai.github.io//atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>https://hellopai.github.io//images/avatar.png</logo>
     <icon>https://hellopai.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[SAXReader将xml形式的文件转换为map形式]]></title>
+        <id>https://hellopai.github.io//post/saxreader-jiang-xml-xing-shi-de-wen-jian-zhuan-huan-wei-map-xing-shi</id>
+        <link href="https://hellopai.github.io//post/saxreader-jiang-xml-xing-shi-de-wen-jian-zhuan-huan-wei-map-xing-shi">
+        </link>
+        <updated>2019-11-23T09:00:18.000Z</updated>
+        <content type="html"><![CDATA[<p>//实现将用户发送的xml文件转换成map文件<br>
+public static HashMap&lt;String, String&gt; XmlToMap(ServletInputStream inputStream) {<br>
+//导入dom4j.jar包,获取SAXReader对象<br>
+SAXReader reader = new SAXReader();<br>
+//定义一个haspMap，用来作为返回值<br>
+HashMap&lt;String, String&gt; map=new HashMap&lt;&gt;();<br>
+try {<br>
+//读取输入流，转换成为document形式的文件<br>
+Document doc = reader.read(inputStream);<br>
+///获取文件的根目录，比如 <emp> <name></name></emp>中的emp是根目录，name是子节点<br>
+Element rootElement = doc.getRootElement();<br>
+//这里是因为得到的xml文件中所有根目录都是不一样的故不需要添加参数<br>
+List<Element> elements = rootElement.elements();<br>
+//遍历取出里面所有的子节点<br>
+for(Element e:elements) {<br>
+//name为子元素名字，text为子元素值<br>
+map.put(e.getName(), e.getText());<br>
+}<br>
+} catch (DocumentException e) {<br>
+// TODO Auto-generated catch block<br>
+e.printStackTrace();<br>
+}<br>
+return map;<br>
+}<br>
+这里注意区别根目录和子元素，个人理解是直到只剩下最后一级那就是子元素，上一级为他的根元素：（根目录有多个的可以通过几个for循环取出参考博客：https://blog.csdn.net/qq_36501591/article/details/80522531）<br>
+<img src="https://hellopai.github.io//post-images/1574501694744.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1574501704077.png" alt=""></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[读取request输入流，转化为控制台输出代码]]></title>
+        <id>https://hellopai.github.io//post/du-qu-request-shu-ru-liu-zhuan-hua-wei-kong-zhi-tai-shu-chu-dai-ma-1</id>
+        <link href="https://hellopai.github.io//post/du-qu-request-shu-ru-liu-zhuan-hua-wei-kong-zhi-tai-shu-chu-dai-ma-1">
+        </link>
+        <updated>2019-11-23T08:56:03.000Z</updated>
+        <content type="html"><![CDATA[<p>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>
+//判断用户发送信息到本地项目服务器中<br>
+System.out.println(&quot;post&quot;);</p>
+<pre><code>	//接收微信用户的xmL数据包
+	ServletInputStream is = request.getInputStream();
+	//使用read(byte[])方法，相对快速的读入数据
+	byte[] b=new byte[1024];
+	int len=0;
+	//使用StringBuffer连接数据
+	StringBuffer sb=new StringBuffer();
+	while((len=is.read(b))!=-1) {
+		//定义一个字符串，从0开始，读len长度个数据
+		sb.append(new String(b,0,len));
+	}
+	System.out.println(sb.toString());
+}</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[秒速五厘米]]></title>
         <id>https://hellopai.github.io//post/miao-su-wu-li-mi</id>
