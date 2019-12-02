@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SAXReader将xml形式的文件转换为map形式 | Gridea</title>
+<title>调用百度Unit接口实现聊天自动回复机器人 | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://hellopai.github.io//favicon.ico?v=1575302087721">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,11 +73,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SAXReader将xml形式的文件转换为map形式
+              调用百度Unit接口实现聊天自动回复机器人
             </h2>
             <div class="post-info">
               <span>
-                2019-11-23
+                2019-12-02
               </span>
               <span>
                 1 min read
@@ -91,33 +91,56 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>//实现将用户发送的xml文件转换成map文件<br>
-public static HashMap&lt;String, String&gt; XmlToMap(ServletInputStream inputStream) {<br>
-//导入dom4j.jar包,获取SAXReader对象<br>
-SAXReader reader = new SAXReader();<br>
-//定义一个haspMap，用来作为返回值<br>
-HashMap&lt;String, String&gt; map=new HashMap&lt;&gt;();<br>
+                <p>1.请求AccessToken说明（https://ai.baidu.com/docs#/Auth/top）<br>
+HTTP方法：POST<br>
+请求URL：https://aip.baidubce.com/rpc/2.0/unit/service/chat<br>
+<img src="https://hellopai.github.io//post-images/1575300493063.png" alt=""><br>
+2.调用接口<br>
+package com.baidu.ai.aip.unit;<br>
+import com.baidu.ai.aip.utils.HttpUtil;<br>
+/*</p>
+<ul>
+<li>unit对话服务<br>
+<em>/<br>
+public class UnitService {<br>
+/</em>*
+<ul>
+<li>重要提示代码中所需工具类</li>
+<li>FileUtil,Base64Util,HttpUtil,GsonUtils请从</li>
+<li>https://ai.baidu.com/file/658A35ABAB2D404FBF903F64D47C1F72</li>
+<li>https://ai.baidu.com/file/C8D81F3301E24D2892968F09AE1AD6E2</li>
+<li>https://ai.baidu.com/file/544D677F5D4E4F17B4122FBD60DB82B3</li>
+<li>https://ai.baidu.com/file/470B3ACCA3FE43788B5A963BF0B625F3</li>
+<li>下载<br>
+*/<br>
+private static String utterance() {<br>
+// 请求URL<br>
+String talkUrl = &quot;https://aip.baidubce.com/rpc/2.0/unit/service/chat&quot;;<br>
 try {<br>
-//读取输入流，转换成为document形式的文件<br>
-Document doc = reader.read(inputStream);<br>
-///获取文件的根目录，比如 <emp> <name></name></emp>中的emp是根目录，name是子节点<br>
-Element rootElement = doc.getRootElement();<br>
-//这里是因为得到的xml文件中所有根目录都是不一样的故不需要添加参数<br>
-List<Element> elements = rootElement.elements();<br>
-//遍历取出里面所有的子节点<br>
-for(Element e:elements) {<br>
-//name为子元素名字，text为子元素值<br>
-map.put(e.getName(), e.getText());<br>
-}<br>
-} catch (DocumentException e) {<br>
-// TODO Auto-generated catch block<br>
+// 请求参数<br>
+String params = &quot;{&quot;log_id&quot;:&quot;UNITTEST_10000&quot;,&quot;version&quot;:&quot;2.0&quot;,&quot;service_id&quot;:&quot;S10000&quot;,&quot;session_id&quot;:&quot;&quot;,&quot;request&quot;:{&quot;query&quot;:&quot;你好&quot;,&quot;user_id&quot;:&quot;88888&quot;},&quot;dialog_state&quot;:{&quot;contexts&quot;:{&quot;SYS_REMEMBERED_SKILLS&quot;:[&quot;1057&quot;]}}}&quot;;<br>
+String accessToken = &quot;#####调用鉴权接口获取的token#####&quot;;<br>
+String result = HttpUtil.post(talkUrl, accessToken, &quot;application/json&quot;, params);<br>
+return result;<br>
+} catch (Exception e) {<br>
 e.printStackTrace();<br>
 }<br>
-return map;<br>
+return null;<br>
 }<br>
-这里注意区别根目录和子元素，第一级为根目录，第二级、第三级均为子目录（子目录有多个的可以通过几个for循环取出参考博客：https://blog.csdn.net/qq_36501591/article/details/80522531）<br>
-<img src="https://hellopai.github.io//post-images/1574502219163.png" alt=""><br>
-<img src="https://hellopai.github.io//post-images/1574502303082.png" alt=""></p>
+public static void main(String[] args) {<br>
+utterance();<br>
+}<br>
+}<br>
+3.注意事项<br>
+1°获取返回的字符串为：<br>
+<img src="https://hellopai.github.io//post-images/1575300755112.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1575300837164.png" alt=""><br>
+2°将请求对话的json字符串中的某个value值替换<br>
+<img src="https://hellopai.github.io//post-images/1575301441630.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1575301817456.png" alt=""></li>
+</ul>
+</li>
+</ul>
 
               </div>
               <div class="toc-container">
@@ -130,9 +153,9 @@ return map;<br>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hellopai.github.io//post/du-qu-request-shu-ru-liu-zhuan-hua-wei-kong-zhi-tai-shu-chu-dai-ma-1">
+            <a href="https://hellopai.github.io//post/saxreader-jiang-xml-xing-shi-de-wen-jian-zhuan-huan-wei-map-xing-shi">
               <h3 class="post-title">
-                读取request输入流，转化为控制台输出代码
+                SAXReader将xml形式的文件转换为map形式
               </h3>
             </a>
           </div>
