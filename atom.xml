@@ -2,14 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hellopai.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-12-17T04:18:31.210Z</updated>
+    <updated>2020-01-03T08:27:07.267Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hellopai.github.io/"/>
     <link rel="self" href="https://hellopai.github.io//atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://hellopai.github.io//images/avatar.png</logo>
     <icon>https://hellopai.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[java基本数据类型]]></title>
+        <id>https://hellopai.github.io//post/java-ji-ben-shu-ju-lei-xing-1</id>
+        <link href="https://hellopai.github.io//post/java-ji-ben-shu-ju-lei-xing-1">
+        </link>
+        <updated>2020-01-03T08:19:07.000Z</updated>
+        <content type="html"><![CDATA[<p>整型：<br>
+byte    1byte      1 0 0 0 0 0 0 ~0 1 1 1 1 1 1 1 :-128~127(将-0当成-128)<br>
+short   2byte<br>
+int       4byte<br>
+long    8byte<br>
+浮点型：<br>
+float    4byte<br>
+double  8byte<br>
+字符型：<br>
+char   2byte<br>
+布尔型：<br>
+boolean  1byte</p>
+<pre><code> 公式： 2^{(字节数*8) -1}  ~2^{(字节数*8) -1}-1 
+ 脑子太笨一直记不住！！！</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[类名-包名-变量名命名规则]]></title>
         <id>https://hellopai.github.io//post/lei-ming-bao-ming-bian-liang-ming-ming-ming-gui-ze</id>
