@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>读取request输入流，转化为控制台输出代码 | Gridea</title>
+<title>安装pandas模块时候 | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://hellopai.github.io//favicon.ico?v=1582128953101">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,40 +73,27 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              读取request输入流，转化为控制台输出代码
+              安装pandas模块时候
             </h2>
             <div class="post-info">
               <span>
-                2019-11-23
+                2020-02-17
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://hellopai.github.io//tag/X4ch_9GxL" class="post-tag">
-                  # 微信公众号开发
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>
-//判断用户发送信息到本地项目服务器中<br>
-System.out.println(&quot;post&quot;);</p>
-<pre><code>	//接收微信用户的xmL数据包
-	ServletInputStream is = request.getInputStream();
-	//使用read(byte[])方法，相对快速的读入数据
-	byte[] b=new byte[1024];
-	int len=0;
-	//使用StringBuffer连接数据
-	StringBuffer sb=new StringBuffer();
-	while((len=is.read(b))!=-1) {
-		//定义一个字符串，从0开始，读len长度个数据
-		sb.append(new String(b,0,len));
-	}
-	System.out.println(sb.toString());
-}</code></pre>
+                <p>理论上使用 pip install pandas 就行了 可是会安装超时<br>
+故使用<br>
+pip install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple<br>
+安装<br>
+国内镜像安装快一点<br>
+<img src="https://hellopai.github.io//post-images/1581933855043.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1581933893876.png" alt=""></p>
 
               </div>
               <div class="toc-container">
@@ -119,9 +106,9 @@ System.out.println(&quot;post&quot;);</p>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hellopai.github.io//post/miao-su-wu-li-mi">
+            <a href="https://hellopai.github.io//post/pip-install-requests">
               <h3 class="post-title">
-                秒速五厘米
+                pip install requests
               </h3>
             </a>
           </div>

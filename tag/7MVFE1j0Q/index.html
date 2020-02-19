@@ -1,8 +1,8 @@
 <html>
   <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>读取request输入流，转化为控制台输出代码 | Gridea</title>
+<title>爬虫 | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://hellopai.github.io//favicon.ico?v=1582128953101">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,90 +70,42 @@
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              读取request输入流，转化为控制台输出代码
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-11-23
-              </span>
-              <span>
-                1 min read
-              </span>
-              
-                <a href="https://hellopai.github.io//tag/X4ch_9GxL" class="post-tag">
-                  # 微信公众号开发
-                </a>
-              
-            </div>
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>
-//判断用户发送信息到本地项目服务器中<br>
-System.out.println(&quot;post&quot;);</p>
-<pre><code>	//接收微信用户的xmL数据包
-	ServletInputStream is = request.getInputStream();
-	//使用read(byte[])方法，相对快速的读入数据
-	byte[] b=new byte[1024];
-	int len=0;
-	//使用StringBuffer连接数据
-	StringBuffer sb=new StringBuffer();
-	while((len=is.read(b))!=-1) {
-		//定义一个字符串，从0开始，读len长度个数据
-		sb.append(new String(b,0,len));
-	}
-	System.out.println(sb.toString());
-}</code></pre>
-
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# 爬虫
+            </h2> 
         </div>
-
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://hellopai.github.io//post/python-pa-qu-json-shu-ju-sheng-cheng-ci-yun">
+        <h2 class="post-title">python爬取json数据生成词云</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-02-20
+        </span>
+        <span>
+          1 min read
+        </span>
         
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://hellopai.github.io//post/miao-su-wu-li-mi">
-              <h3 class="post-title">
-                秒速五厘米
-              </h3>
-            </a>
-          </div>
+          <a href="https://hellopai.github.io//tag/7MVFE1j0Q" class="post-tag">
+            # 爬虫
+          </a>
         
-
+      </div>
+      
+      <div class="post-abstract">
         
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+      </di>
+    </article>
+  
+</div>
 
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '6d79a7dbceef61505e1d',
-    clientSecret: '9986a161075f16938957c99fd642404e04a4c627',
-    repo: 'helloPai/helloPai.github.io',
-    owner: 'helloPai',
-    admin: ['helloPai'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
+        <div class="pagination-container">
+  
+  
+</div>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 

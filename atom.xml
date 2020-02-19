@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hellopai.github.io/</id>
     <title>Gridea</title>
-    <updated>2020-02-16T12:06:42.372Z</updated>
+    <updated>2020-02-19T16:15:57.375Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hellopai.github.io/"/>
     <link rel="self" href="https://hellopai.github.io//atom.xml"/>
@@ -10,6 +10,58 @@
     <logo>https://hellopai.github.io//images/avatar.png</logo>
     <icon>https://hellopai.github.io//favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[python爬取json数据生成词云]]></title>
+        <id>https://hellopai.github.io//post/python-pa-qu-json-shu-ju-sheng-cheng-ci-yun</id>
+        <link href="https://hellopai.github.io//post/python-pa-qu-json-shu-ju-sheng-cheng-ci-yun">
+        </link>
+        <updated>2020-02-19T16:09:17.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://hellopai.github.io//post-images/1582128859755.png" alt=""></p>
+<p>for p in json_data:<br>
+if 'cities' in p:<br>
+for c in p['cities']:<br>
+cCount=c['confirmedCount']<br>
+sCount=c['suspectedCount']<br>
+total=int(cCount)+int(sCount)<br>
+city_dir[c['cityName']]=total<br>
+else:<br>
+cCount = c['confirmedCount']<br>
+sCount = c['suspectedCount']<br>
+total = int(cCount) + int(sCount)<br>
+city_dir[p['provinceName']] = total<br>
+with open('yiqing.csv','w') as f:<br>
+for k,v in city_dir.items():<br>
+f.write(f'{k}:{v}\n')</p>
+<pre><code>			#引入数据处理模块
+</code></pre>
+<p>import numpy as  np<br>
+import PIL<br>
+#mask有特定形状的图案<br>
+heart_mask=np.array(PIL.Image.open('111.png'))<br>
+ccloud=wordcloud.WordCloud(background_color='white',mask=heart_mask,font_path='C:\Windows\Fonts\STXINGKA.TTF')<br>
+ccloud.generate_from_frequencies(frequencies=city_dir)</p>
+<p>plt.figure(dpi=1200)<br>
+plt.imshow(ccloud,interpolation='bilinear')<br>
+plt.axis('off')<br>
+plt.savefig('heart.png')</p>
+<h1 id="pltshow">plt.show()</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[安装pandas模块时候]]></title>
+        <id>https://hellopai.github.io//post/an-zhuang-pandas-mo-kuai-shi-hou</id>
+        <link href="https://hellopai.github.io//post/an-zhuang-pandas-mo-kuai-shi-hou">
+        </link>
+        <updated>2020-02-17T10:02:59.000Z</updated>
+        <content type="html"><![CDATA[<p>理论上使用 pip install pandas 就行了 可是会安装超时<br>
+故使用<br>
+pip install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple<br>
+安装<br>
+国内镜像安装快一点<br>
+<img src="https://hellopai.github.io//post-images/1581933855043.png" alt=""><br>
+<img src="https://hellopai.github.io//post-images/1581933893876.png" alt=""></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[pip install requests]]></title>
         <id>https://hellopai.github.io//post/pip-install-requests</id>
@@ -213,67 +265,6 @@ System.out.println(&quot;post&quot;);</p>
 等这列电车开过之后就继续向前走吧<br>
 -秒速五厘米<br>
 <img src="https://hellopai.github.io//post-images/1573481154723.jpg" alt=""></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[one more time,one more chance]]></title>
-        <id>https://hellopai.github.io//post/one-more-timeone-more-chance</id>
-        <link href="https://hellopai.github.io//post/one-more-timeone-more-chance">
-        </link>
-        <updated>2019-11-10T13:13:04.000Z</updated>
-        <content type="html"><![CDATA[<p>还要我再一次失去什么，才能让心得到宽恕<br>
-还要再承受怎么样的痛楚，才能再次与你相遇<br>
-one more time,季节啊请你不要再继续变换<br>
-one more time,曾经与你嬉戏欢闹的时光啊<br>
-每一次争吵的时候，总会是我先让步<br>
-你那任性的性格，却让我更加迷恋<br>
-one more chance,被记忆牵绊止足不前<br>
-one more chance,无法选择的下个地点<br>
-一直在到处茫然寻觅着你，到处在寻找着你的身影<br>
-铁路对面的月台，小巷深处的窗口<br>
-可我却明明知道你不可能会在那里<br>
-如果能够实现一个愿望的话，我只想要立刻飞奔向你<br>
-已经再没有什么了，没有什么做不到的</p>
-<p>如果只是为了排遣寂寞的话，那无论是谁应该都可以<br>
-但在这繁星都在坠落的夜里，我再也无法欺骗我自己<br>
-one more time，季节啊请你不要再继续变换<br>
-one more time,曾经与你嬉戏欢闹的时光啊<br>
-一直在到处茫然寻觅这你，到处寻找着你的身影<br>
-交叉的十字路口，每个夜晚的梦里<br>
-可我却明明知道你不可能会在那里<br>
-如果真的能够有奇迹的话，我只想要立刻就能够让你看到<br>
-崭新的清晨，以及那个崭新的我<br>
-还有那一句没能说出口的喜欢你<br>
-夏日的记忆不断回旋<br>
-刹时之间小时的悸动<br>
-一直在到处茫然寻觅着你，到处在寻找着你的身影<br>
-黎明照耀的街道，樱花盛开的小镇<br>
-可我明明知道你不可能会来到这里<br>
-如果能够实现一个愿望的话，我只想要立刻飞奔向你<br>
-已经再没有什么，没有什么做不到的<br>
-我只愿不顾一切，再次将你拥入怀里<br>
-一直在到处茫然寻觅着你，到处找寻你散落的碎片<br>
-履行经过的小店，报纸边缘的角落<br>
-可我却明明知道你不可能会在那里<br>
-如果真的能够有奇迹的话，我只想要立刻就能够让你看到<br>
-崭新的清晨，以及那个崭新的我<br>
-还有那一句没能说出口的喜欢你<br>
-一直在到处寻觅着你，到处找寻你遗落的笑容<br>
-等待着快速列车通过，环顾着铁路道口附近<br>
-可我却明明知道你不可能会在那里<br>
-无论生命要如何的轮回往复，不管如何都要到你的身边<br>
-已经没有任何的任何想要拥有的了<br>
-除你之外，因为再也没有比你更重要的了...<br>
-<img src="https://hellopai.github.io//post-images/1573394243894.jpg" alt=""></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我的第一条博客]]></title>
-        <id>https://hellopai.github.io//post/wo-de-di-yi-tiao-bo-ke-1</id>
-        <link href="https://hellopai.github.io//post/wo-de-di-yi-tiao-bo-ke-1">
-        </link>
-        <updated>2019-11-10T02:44:48.000Z</updated>
-        <content type="html"><![CDATA[<p>你好呀这是我的第一条博客</p>
 ]]></content>
     </entry>
 </feed>
